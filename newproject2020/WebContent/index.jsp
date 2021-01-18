@@ -9,6 +9,6 @@
 <body>
 
 Hello World ! 
-
+<%out.print("Welcome to JSP, Grace!");%>
 </body>
 </html>
