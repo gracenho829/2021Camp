@@ -53,6 +53,7 @@ request.setAttribute("list",list);
     </thead>
     <tbody>
       <c:forEach items="${list}" var="u">  
+      <c:if test="${u.status eq 'Finished'}">
       <tr>
       	<td>${u.getName()}</td>
       	<td>${u.getAuthor()}</td>  
@@ -64,6 +65,7 @@ request.setAttribute("list",list);
 				<a class= "btn btn-sm btn-danger" href="deletebook.jsp?id=${u.getId()}">Delete</a>
 		</td>  
 		</tr>
+		</c:if>
 	</c:forEach> 
     </tbody>
   </table>

@@ -2,7 +2,7 @@ package com.book;
 
 public class Book {
 	private int id;  
-	private String name,author,status, image;
+	private String name,author,status, image, inLibrary;
 	public int getId() {
 		return id;
 	}
@@ -32,6 +32,12 @@ public class Book {
 	}
 	public void setImage(String image) {
 		this.image = image;
+	}
+	public String getInLibrary() {
+		return inLibrary;
+	}
+	public void setInLibrary(String inLibrary) {
+		this.inLibrary = inLibrary;
 	}
 	
 }

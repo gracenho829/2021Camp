@@ -19,9 +19,10 @@
         <version>3.2.3</version>
         <configuration>
           <warSourceDirectory>WebContent</warSourceDirectory>
+          <failOnMissingWebXml>false</failOnMissingWebXml>
         </configuration>
       </plugin>
-    </plugins>
+       </plugins>
   </build>
       <dependencies>
 		  <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->

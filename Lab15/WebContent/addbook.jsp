@@ -37,12 +37,15 @@
 	String name = multpartRequest.getParameter("name");
 	String author = multpartRequest.getParameter("author");
 	String status = multpartRequest.getParameter("status");
+	String inLibrary = multpartRequest.getParameter("inLibrary");
 	filename = multpartRequest.getFilesystemName("image");
+	
 	
 	u.setAuthor(author);
 	u.setName(name);
 	u.setImage(filename);
 	u.setStatus(status);
+	u.setInLibrary(inLibrary);
 	int i=BookDAO.save(u);  
 	if(i>0){  
 	response.sendRedirect("index.jsp");  

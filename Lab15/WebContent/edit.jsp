@@ -44,6 +44,14 @@
 					
 			    </div>
 			</div>
+			<div class="form-group row">
+				<label class="col-form-label col-sm-2" for="inLibrary">In
+					Library?</label>
+				<div class="col-sm-10">
+					<input type="radio" name="inLibrary" value="Yes" />Yes <input
+						type="radio" name="inLibrary" value="No" />No
+				</div>
+			</div>
 			<input type = "file" name = "image"><br>
 			 <div class="form-group row">
 			 <label class="col-form-label col-sm-2"></label>

@@ -19,11 +19,12 @@ public class BookDAO {
 	    try{  
 	        Connection con=getConnection();  
 	        PreparedStatement ps=con.prepareStatement(  
-	"insert into bookList (name,author,status,image) values(?,?,?,?)");  
+	"insert into bookList (name,author,status,image,inLibrary) values(?,?,?,?,?)");  
 	        ps.setString(1,u.getName());  
 	        ps.setString(2,u.getAuthor());  
 	        ps.setString(3,u.getStatus()); 
 	        ps.setString(4,u.getImage()); 
+	        ps.setString(5, u.getInLibrary());
 	        st=ps.executeUpdate();  
 	    }catch(Exception e){System.out.println(e);}  
 	    return st;  
@@ -34,13 +35,14 @@ public class BookDAO {
 	    try{  
 	        Connection con=getConnection();  
 	        PreparedStatement ps=con.prepareStatement(  
-	"update bookList set name=?,author=?,status=?, image=? where id=?");  
+	"update bookList set name=?,author=?,status=?, image=? inLibrary=? where id=?");  
 	        System.out.println(u.getId());
 	        ps.setString(1,u.getName());  
 	        ps.setString(2,u.getAuthor());  
 	        ps.setString(3,u.getStatus());  
-	        ps.setString(4,u.getImage());  
-	        ps.setInt(5,u.getId());  
+	        ps.setString(4,u.getImage()); 
+	        ps.setString(5, u.getInLibrary());
+	        ps.setInt(6,u.getId());  
 	        st=ps.executeUpdate();  
 	    }catch(Exception e){System.out.println(e);}  
 	    return st;  
@@ -72,6 +74,7 @@ public class BookDAO {
 	            u.setAuthor(rs.getString("author"));  
 	            u.setStatus(rs.getString("status"));  
 	            u.setImage(rs.getString("image"));  
+	            u.setInLibrary(rs.getString("inLibrary"));
 	            list.add(u);  
 	        }  
 	    }catch(Exception e){System.out.println(e);}  
@@ -92,6 +95,7 @@ public class BookDAO {
 	            u.setAuthor(rs.getString("author"));  
 	            u.setStatus(rs.getString("status"));  
 	            u.setImage(rs.getString("image"));
+	            u.setInLibrary(rs.getString("inLibrary"));
 	        }  
 	    }catch(Exception e){System.out.println(e);}  
 	    return u;  
