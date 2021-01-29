@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="Cafes">
+    <select id="Select" parameterType="string" resultType="EmpVO">
+        SELECT * FROM Emp99 
+    </select>
+    
+    <insert id="Insert" parameterType="EmpVO">
+        INSERT INTO Emp99 (name, blog, address, rating) VALUES (#{name}, #{blog}, #{address}, #{rating})
+    </insert>
+    
+    <delete id="Delete" parameterType="EmpVO">
+    	DELETE FROM Emp99 WHERE ID = #{id}
+    </delete>
+    
+   	<update id="Update" parameterType = "EmpVO">
+   		UPDATE Emp99 set name=#{name}, blog=#{blog}, address=#{address} where id=#{id}
+   	</update>
+   	<select id="SelectList" resultType="EmpVO">
+   		select * from Emp99 order by id desc
+   	</select>
+</mapper>

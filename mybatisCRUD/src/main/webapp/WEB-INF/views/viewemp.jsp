@@ -66,7 +66,6 @@
     <td style="font-size: 10px;"> <a href="${emp.blog}">${emp.blog}</a></td>
     <td style="font-size: 10px;">${emp.address}</td>
     <td>${emp.rating}</td>
-    <td><a href="editemp/${emp.id}">Edit</a></td>
     <td><a href="deleteemp/${emp.id}">Delete</a></td>
     </tr>
     </c:forEach>
